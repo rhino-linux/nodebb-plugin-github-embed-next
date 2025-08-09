@@ -15,10 +15,6 @@
                     </h3>
                     {{{ end }}}
 
-                    {{{ if embeds.body }}}
-                        <div class="description">{embeds.body}</div>
-                    {{{ end }}}
-
                     {{{ if embeds.type.pr }}}
                     <div class="meta">
                         <img class="author-picture not-responsive" src="{embeds.user.picture}" title="{embeds.user.login}" />
@@ -39,9 +35,6 @@
                         <a href="{embeds.url}">{embeds.title}</a>
                         <span class="number">#{embeds.number}</span>
                     </h3>
-                    {{{ if embeds.body }}}
-                        <div class="description">{embeds.body}</div>
-                    {{{ end }}}
                     {{{ end }}}
 
                     {{{ if embeds.type.commit }}}
@@ -51,6 +44,10 @@
                         <a href="{embeds.user.url}"><span class="username">{embeds.user.login}</span></a> committed <span class="timeago" title="{embeds.created}"></span> to <a href="//github.com/{embeds.repo}">{embeds.repo}</a>
                     </div>
                     <a href="{embeds.url}"><pre>{embeds.message}</pre></a>
+                    {{{ end }}}
+
+                    {{{ if embeds.body }}}
+                        <div class="description">{embeds.body}</div>
                     {{{ end }}}
                 </div>
             </div>
