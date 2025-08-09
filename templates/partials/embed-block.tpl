@@ -42,7 +42,6 @@
                         {{{ if embeds.body }}}  
                             <div class="description">{embeds.body}</div>  
                         {{{ end }}}
-                    {{{ end }}}
 
                     {{{ if embeds.type.commit }}}
                     <div class="meta">
