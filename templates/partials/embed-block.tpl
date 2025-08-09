@@ -21,9 +21,6 @@
                         <a href="{embeds.user.url}"><span class="username">{embeds.user.login}</span></a> opened this pull request <span class="timeago" title="{embeds.created}"></span> in <a href="//github.com/{embeds.repo}">{embeds.repo}</a>
                     </div>
                     <h3>
-                    {{{ if embeds.merged }}}
-                        <span class="badge merged float-end">merged</span>
-                    {{{end }}}
                         {{{ if !embeds.draft }}}
                             {{{ if embeds.merged }}}
                                 <span class="badge merged float-end">merged</span>
