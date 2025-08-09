@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/julianlam/nodebb-plugin-github-embed"
+    "url": "https://github.com/rhino-linux/nodebb-plugin-github-embed-next"
   },
   "keywords": [
     "nodebb",
