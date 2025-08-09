@@ -201,6 +201,38 @@ Embed.getIssueData = async (issueKey) => {
 
 	switch (statusCode) {
 		case 200: {
+			let merged = null;
+			let draft = null;
+			if (issue.hasOwnProperty('pull_request')) {
+				const prReqOpts = {
+					url: `https://api.github.com/repos/${repo}/pulls/${issueNum}`,
+					json: true,
+					headers: {
+						'User-Agent': 'nodebb-plugin-github-embed',
+					},
+					resolveWithFullResponse: true,
+				};
+				if (personalAccessToken) {
+					prReqOpts.auth = {
+						user: personalAccessToken,
+						pass: 'x-oauth-basic',
+					};
+				} else if (clientId && clientSecret) {
+					prReqOpts.auth = {
+						user: clientId,
+						pass: clientSecret,
+					};
+				}
+				try {
+					const { statusCode: prStatus, body: prBody } = await request.get(prReqOpts);
+					if (prStatus === 200) {
+						merged = prBody.merged;
+						draft = prBody.draft;
+					}
+				} catch (err) {
+					winston.warn(`[plugins/github-embed] Failed to fetch PR details for ${repo}#${issueNum}`);
+				}
+			}
 			const returnData = {
 				type: {
 					issue: !issue.hasOwnProperty('pull_request'),
@@ -212,9 +244,9 @@ Embed.getIssueData = async (issueKey) => {
 				url: issue.html_url,
 				title: escape(issue.title),
 				body: escape(issue.body || ''),
-				merged: issue.hasOwnProperty('pull_request') ? issue.merged : null,
+				merged: merged,
 				state: issue.state,
-				draft: issue.hasOwnProperty('pull_request') ? issue.draft : null,
+				draft: draft,
 				created: issue.created_at,
 				user: {
 					login: issue.user.login,
