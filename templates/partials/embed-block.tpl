@@ -24,11 +24,17 @@
                         <img class="author-picture not-responsive" src="{embeds.user.picture}" title="{embeds.user.login}" />
                         <a href="{embeds.user.url}"><span class="username">{embeds.user.login}</span></a> opened this pull request <span class="timeago" title="{embeds.created}"></span> in <a href="//github.com/{embeds.repo}">{embeds.repo}</a>
                     </div>
-                    <h3>
+                    <h3>  
                         {{{ if !embeds.draft }}}
-                        <span class="badge {embeds.state} float-end">{embeds.state}</span>
+                            {{{ if embeds.merged }}}
+                                <span class="badge merged float-end">merged</span>
+                            {{{ else if embeds.state === "closed" }}}
+                                <span class="badge closed float-end">closed</span>
+                            {{{ else }}}
+                                <span class="badge open float-end">open</span>
+                            {{{ end }}}
                         {{{ else }}}
-                        <span class="badge bg-secondary float-end">draft</span>
+                            <span class="badge bg-secondary float-end">draft</span>
                         {{{ end }}}
                         <a href="{embeds.url}">{embeds.title}</a>
                         <span class="number">#{embeds.number}</span>

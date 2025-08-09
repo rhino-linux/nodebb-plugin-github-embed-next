@@ -32,11 +32,15 @@
 			padding: 3px 4px;
 
 			&.closed {
-				background: #bd2c00;
+				background: #c10080;
 			}
 
 			&.open {
-				background: #009800;
+				background: #2ef77a;
+			}
+
+			&.merged {
+				background: #8d7be4;
 			}
 		}
 
