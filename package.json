@@ -1,6 +1,6 @@
 {
   "name": "nodebb-plugin-github-embed-next",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Display GitHub issues, pull requests, and commits in NodeBB",
   "main": "index.js",
   "repository": {
