@@ -15,6 +15,10 @@
                     </h3>
                     {{{ end }}}
 
+                    {{{ if embeds.body }}}
+                        <div class="description">{embeds.body}</div>
+                    {{{ end }}}
+
                     {{{ if embeds.type.pr }}}
                     <div class="meta">
                         <img class="author-picture not-responsive" src="{embeds.user.picture}" title="{embeds.user.login}" />
@@ -29,6 +33,9 @@
                         <a href="{embeds.url}">{embeds.title}</a>
                         <span class="number">#{embeds.number}</span>
                     </h3>
+                        {{{ if embeds.body }}}  
+                            <div class="description">{embeds.body}</div>  
+                        {{{ end }}}
                     {{{ end }}}
 
                     {{{ if embeds.type.commit }}}
