@@ -28,8 +28,12 @@
                         {{{ if !embeds.draft }}}
                             {{{ if embeds.merged }}}
                                 <span class="badge merged float-end">merged</span>
-                            {{{ else if embeds.state === "closed" }}}
-                                <span class="badge closed float-end">closed</span>
+                            {{{ else }}}
+                                {{{ if embeds.state === 'closed' }}}
+                                    <span class="badge closed float-end">closed</span>
+                                {{{ else }}}
+                                    <span class="badge open float-end">open</span>
+                                {{{ end }}}
                             {{{ else }}}
                                 <span class="badge open float-end">open</span>
                             {{{ end }}}
@@ -42,6 +46,7 @@
                         {{{ if embeds.body }}}  
                             <div class="description">{embeds.body}</div>  
                         {{{ end }}}
+                    {{{ end }}}
 
                     {{{ if embeds.type.commit }}}
                     <div class="meta">
