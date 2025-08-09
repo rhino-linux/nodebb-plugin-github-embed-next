@@ -1,7 +1,7 @@
 {
-  "name": "nodebb-plugin-github-embed",
-  "version": "1.1.1",
-  "description": "Turns issue numbers (#1234) into dynamic entities in posts",
+  "name": "nodebb-plugin-github-embed-next",
+  "version": "1.0.0",
+  "description": "Display GitHub issues, pull requests, and commits in NodeBB",
   "main": "index.js",
   "repository": {
     "type": "git",
@@ -12,10 +12,10 @@
     "plugin",
     "github"
   ],
-  "author": "Julian Lam <julian@designcreateplay.com>",
+  "author": "Julian Lam <julian@designcreateplay.com>, AJStrong <ajstrongdev@pm.me>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/julianlam/nodebb-plugin-github-embed/issues"
+    "url": "https://github.com/rhino-linux/nodebb-plugin-github-embed-next/issues"
   },
   "dependencies": {
     "escape-html": "^1.0.3",
