@@ -26,7 +26,7 @@
                     </div>
                     <h3>
                         {{{ if !embeds.draft }}}
-                            {{{ if embeds.merged }}}
+                            {{{ if embeds.merged_at }}}
                                 <span class="badge merged float-end">merged</span>
                             {{{ else }}}
                                 {{{ if embeds.state }}}
