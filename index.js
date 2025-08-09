@@ -212,8 +212,8 @@ Embed.getIssueData = async (issueKey) => {
 				url: issue.html_url,
 				title: escape(issue.title),
 				body: escape(issue.body || ''),
-				state: issue.state,
 				merged: issue.hasOwnProperty('pull_request') ? issue.merged : null,
+				state: issue.state,
 				draft: issue.hasOwnProperty('pull_request') ? issue.draft : null,
 				created: issue.created_at,
 				user: {
